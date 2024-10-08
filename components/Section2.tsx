@@ -5,7 +5,7 @@ import MaxWidthWrapper from "./MaxWithWrapper";
 export const Section2 = () => {
   return (
     <div className="flex flex-col gap-20">
-      <MaxWidthWrapper className="mt-20 flex items-center justify-center flex-col gap-10">
+      <MaxWidthWrapper className="mt-10 flex items-center justify-center flex-col gap-10">
         <h3 className="text-3xl font-bold max-w-[550px] text-center">
           Former un amour irrationnel entre les clients et leurs bâtiments
         </h3>

@@ -5,7 +5,7 @@ import { FaInstagram, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
 export const HeroSection = () => {
   return (
-    <div className="flex flex-col gap-20">
+    <div className="flex flex-col gap-20 h-full">
       <MaxWidthWrapper className="relative pt-36">
         <div className="relative size-full flex flex-col items-center gap-10">
           <div className="flex items-center gap-1 w-full justify-center">

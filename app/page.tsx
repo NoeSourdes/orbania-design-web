@@ -12,16 +12,16 @@ import { Team } from "@/components/Team";
 export default function Home() {
   return (
     <main className="space-y-5">
-      <section className="h-screen">
+      <section className="">
         <Header />
         <HeroSection />
-        <Section2 />
-        <Services />
-        <RecentsProjects />
-        <Team />
-        <Blog />
-        <Footer />
       </section>
+      <Section2 />
+      <Services />
+      <RecentsProjects />
+      <Team />
+      <Blog />
+      <Footer />
     </main>
   );
 }
