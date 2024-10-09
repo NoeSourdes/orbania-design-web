@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/sheet";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import MaxWidthWrapper from "./MaxWithWrapper";
 import { Label } from "./ui/label";
 
@@ -42,15 +43,17 @@ export const Header = () => {
   return (
     <header className="fixed top-0 left-0 max-h-24 w-full z-[1000000]">
       <MaxWidthWrapper className="size-full flex justify-between items-center py-5 bg-background">
-        <div className="flex items-center gap-3">
-          <Image
-            src="/svg/logo.svg"
-            alt="logo Orbania Design"
-            height={35}
-            width={35}
-          />
-          <h1 className="text-2xl font-black">Orbania Design</h1>
-        </div>
+        <Link href="/">
+          <div className="flex items-center gap-3">
+            <Image
+              src="/svg/logo.svg"
+              alt="logo Orbania Design"
+              height={35}
+              width={35}
+            />
+            <h1 className="text-2xl font-black">Orbania Design</h1>
+          </div>
+        </Link>
         <div className="items-center gap-5 md:flex hidden">
           {menu_Link.map((item) => (
             <div
@@ -93,14 +96,16 @@ export const Header = () => {
                   </div>
                 ))}
               </div>
-              <div className="relative h-20 bg-primary flex items-center cursor-pointer hover:hover:bg-primary/90 transition-all">
-                <div className="w-full flex items-center justify-center">
-                  <p className="text-lg text-background">Nous contacter</p>
+              <Link href="/contact">
+                <div className="relative h-20 bg-primary flex items-center cursor-pointer hover:hover:bg-primary/90 transition-all">
+                  <div className="w-full flex items-center justify-center">
+                    <p className="text-lg text-background">Nous contacter</p>
+                  </div>
+                  <div className="w-16 h-16 bg-background mb-[3px] absolute right-1.5 top-1.5 flex items-center justify-center">
+                    <ArrowUpRight size={40} />
+                  </div>
                 </div>
-                <div className="w-16 h-16 bg-background mb-[3px] absolute right-1.5 top-1.5 flex items-center justify-center">
-                  <ArrowUpRight size={40} />
-                </div>
-              </div>
+              </Link>
             </div>
           </SheetContent>
         </Sheet>

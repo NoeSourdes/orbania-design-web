@@ -1,9 +1,14 @@
+import Link from "next/link";
 import { FaInstagram, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { Mainbutton } from "./Mainbutton";
 import MaxWidthWrapper from "./MaxWithWrapper";
 import { Label } from "./ui/label";
 
-export const Footer = () => {
+interface footerProps {
+  conatact?: boolean;
+}
+
+export const Footer = ({ conatact }: footerProps) => {
   const menu_Link = [
     { index: 0, label: "À propos", link: "/about" },
     { index: 1, label: "Services", link: "/services" },
@@ -14,15 +19,19 @@ export const Footer = () => {
 
   return (
     <>
-      <div className="flex flex-col gap-20">
-        <MaxWidthWrapper className="mt-20 gap-20 flex flex-col">
-          <div className="flex flex-col sm:flex-row items-center justify-between max-sm:items-start max-sm:justify-start gap-5">
-            <h2 className="text-3xl font-bold">Commencé un projet ?</h2>
-            <Mainbutton>Nous contacter</Mainbutton>
-          </div>
-        </MaxWidthWrapper>
-        <div className="md:mx-10 mx-3 h-[1px] bg-primary"></div>
-      </div>
+      {conatact === false && (
+        <div className="flex flex-col gap-20">
+          <MaxWidthWrapper className="mt-20 gap-20 flex flex-col">
+            <div className="flex flex-col sm:flex-row items-center justify-between max-sm:items-start max-sm:justify-start gap-5">
+              <h2 className="text-3xl font-bold">Commencé un projet ?</h2>
+              <Link href="/contact">
+                <Mainbutton>Nous contacter</Mainbutton>
+              </Link>
+            </div>
+          </MaxWidthWrapper>
+          <div className="md:mx-10 mx-3 h-[1px] bg-primary"></div>
+        </div>
+      )}
       <div className="flex flex-col">
         <MaxWidthWrapper className="mt-20 gap-20 flex flex-col items-center w-full">
           <div className="flex flex-col md:flex-row items-center justify-between w-full">
@@ -31,7 +40,9 @@ export const Footer = () => {
                 L'assistance est disponible 24 heures sur 24
               </h3>
               <div className="flex justify-start items-start">
-                <Mainbutton>Nous contacter</Mainbutton>
+                <Link href="/contact">
+                  <Mainbutton>Nous contacter</Mainbutton>
+                </Link>
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">

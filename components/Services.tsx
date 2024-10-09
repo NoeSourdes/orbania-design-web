@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Mainbutton } from "./Mainbutton";
 import MaxWidthWrapper from "./MaxWithWrapper";
 
@@ -48,7 +49,9 @@ export const Services = () => {
                 guider. De plaisanter. Régner. Servir. Appartenir.
               </p>
               <div className="flex items-start">
-                <Mainbutton>Contacter nous</Mainbutton>
+                <Link href="/contact">
+                  <Mainbutton>Nous contacter</Mainbutton>
+                </Link>
               </div>
             </div>
           </div>

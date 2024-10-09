@@ -1,6 +1,7 @@
 import { Mainbutton } from "@/components/Mainbutton";
 import MaxWidthWrapper from "@/components/MaxWithWrapper";
 import Image from "next/image";
+import Link from "next/link";
 import { FaInstagram, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
 export const HeroSection = () => {
@@ -19,7 +20,9 @@ export const HeroSection = () => {
               Design.
             </h1>
             <div className="flex flex-col items-end max-md:items-center gap-10">
-              <Mainbutton>Contacter nous</Mainbutton>
+              <Link href="/contact">
+                <Mainbutton>Nous contacter</Mainbutton>
+              </Link>
               <div className="flex items-center gap-5">
                 <FaInstagram size={25} className="cursor-pointer" />
                 <FaXTwitter size={25} className="cursor-pointer" />
